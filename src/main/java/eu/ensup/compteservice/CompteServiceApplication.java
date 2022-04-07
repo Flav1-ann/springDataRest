@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
-import java.beans.BeanProperty;
 import java.util.Date;
 
 @SpringBootApplication
@@ -27,6 +26,7 @@ public class CompteServiceApplication {
     @Bean
     CommandLineRunner start(CompteRepository compteRepository, UserRepository userRepository, PasswordConfig passwordConfig, RepositoryRestConfiguration repositoryRestConfiguration){
         return args -> {
+
             userRepository.save(new User(null,"flavien", Roles.ADMIN,passwordConfig.passwordEncoder().encode("flavien")));
             userRepository.save(new User(null,"test", Roles.USER,passwordConfig.passwordEncoder().encode("test")));
 

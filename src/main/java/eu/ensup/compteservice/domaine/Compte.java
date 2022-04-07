@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Compte {
+public class Compte  {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long code;

@@ -2,13 +2,14 @@ package eu.ensup.compteservice.service;
 
 import eu.ensup.compteservice.domaine.Compte;
 import eu.ensup.compteservice.repository.CompteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
 @Service
 @Transactional
+@ManagedResource(objectName = "fr.flavien.microservice:name=AccountServiceImpl")
 public class CompteServiceImpl implements CompteService {
 
     private final CompteRepository compteRepository;
